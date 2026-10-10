@@ -79,4 +79,28 @@ public class ApiExceptionHandler {
                 "The request conflicts with existing data",
                 request);
     }
+
+    /**
+     * Handles invalid business requests, such as currency mismatches
+     * and payments that exceed the order amount.
+     *
+     * @param exception the business validation exception
+     * @param request   the HTTP request that caused the exception
+     * @return a 400 Bad Request response
+     */
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ApiError> handleIllegalArgumentException(
+            IllegalArgumentException exception,
+            HttpServletRequest request) {
+
+        ApiError error = new ApiError(
+                OffsetDateTime.now(),
+                HttpStatus.BAD_REQUEST.value(),
+                HttpStatus.BAD_REQUEST.getReasonPhrase(),
+                exception.getMessage(),
+                request.getRequestURI());
+
+        return ResponseEntity.badRequest().body(error);
+    }
+
 }
