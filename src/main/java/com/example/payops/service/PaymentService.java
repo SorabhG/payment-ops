@@ -3,6 +3,8 @@ package com.example.payops.service;
 import com.example.payops.dto.CreatePaymentRequest;
 import com.example.payops.entity.Order;
 import com.example.payops.entity.Payment;
+import com.example.payops.exception.OrderNotFoundException;
+import com.example.payops.exception.PaymentNotFoundException;
 import com.example.payops.repository.OrderRepository;
 import com.example.payops.repository.PaymentRepository;
 import org.springframework.stereotype.Service;

@@ -1,14 +1,15 @@
 package com.example.payops.controller;
 
-import com.example.payops.service.CustomerNotFoundException;
-import com.example.payops.service.OrderNotFoundException;
+import com.example.payops.exception.CustomerEmailAlreadyExistsException;
+import com.example.payops.exception.CustomerNotFoundException;
+import com.example.payops.exception.OrderNotFoundException;
+
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import com.example.payops.service.CustomerEmailAlreadyExistsException;
 import org.springframework.dao.DataIntegrityViolationException;
 import java.time.OffsetDateTime;
 

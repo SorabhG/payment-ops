@@ -3,6 +3,8 @@ package com.example.payops.service;
 
 import com.example.payops.dto.CreateCustomerRequest;
 import com.example.payops.entity.Customer;
+import com.example.payops.exception.CustomerEmailAlreadyExistsException;
+import com.example.payops.exception.CustomerNotFoundException;
 import com.example.payops.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,5 +1,5 @@
 
-package com.example.payops.service;
+package com.example.payops.exception;
 
 /** Identifies an attempt to register an email already in use. */
 public class CustomerEmailAlreadyExistsException extends RuntimeException {

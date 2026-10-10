@@ -1,4 +1,4 @@
-package com.example.payops.service;
+package com.example.payops.exception;
 
 import java.util.UUID;
 
